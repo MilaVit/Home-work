@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul id="listText"><li>first</li><li>second</li><li>three</li><li>four</li><li>five</li></ul>
+    <br>
+    <form>
+        <input type="text" id="mytext" name="input" size="40"><br>
+        <input type="button" value="добавить в конец" onclick="addTheLastItem(this.form)"><br> 
+        <input type="button" value="добавить в начало" onclick="addTheFirstItem(this.form)"><br>
+        <input type="button" value="удалить" onclick="deletedElement()"><br>
+        <input type="button" value="выбрать первый элемент" onclick="selectTheFirstItem()"><br>
+        <input type="button" value="выбрать последний элемент" onclick="selectTheLastItem()"><br>
+        <input type="button" value="выбрать предыдущий элемент" onclick="selectThePreviousItem()"><br>
+        <input type="button" value="выбрать следующий элемент" onclick="selectTheNextElement()"><br>
+    </form>
+    <script src="addElementToTheEnd.js"></script>
+    <script src="deletedText.js"></script>
+    <script src="addElementToTheBegining.js"></script>
+    <script src="firstElement.js"></script>
+    <script src="lastChild.js"></script>
+    <script src="previousItem.js"></script>
+    <script src="nextElement.js"></script>
+</body>
+</html>

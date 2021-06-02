@@ -1,0 +1,14 @@
+ul > li{
+    font-size: 18px;
+    font-style: oblique;
+}
+
+form > input[type = 'button']{
+    margin-top: 5px;
+    margin-left: 35px;
+    width: 250px;
+    height: 25px;
+    background-color: rgb(192, 187, 187);
+    color: rgb(12, 11, 19);
+    border: none;
+}
