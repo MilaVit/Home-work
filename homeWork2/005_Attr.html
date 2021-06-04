@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Attr</title>
+    <style>
+        /* a[target='_self'] {
+            background-color: yellow;
+        }
+        a[target='_blank'] { 
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <a href="#">w3schools.com</a>
+    <a href="http://www.google.com" target="_blank">google.com</a>
+    <a href="http://www.wikipedia.org" target="_self">wikipedia.org</a>
+    <a href="#">Someting</a>
+    
+    <script>
+        let firstLink = document.querySelector("a[target='_blank']");
+        let secondLink = document.querySelector("a[target='_self']");
+
+        function giveColorLink(){
+        firstLink.style.cssText = "background-color: red;"
+        secondLink.style.cssText = "background-color: yellow;"
+        }
+
+        function showStyleElements() {
+            let showFirstLink = getComputedStyle(firstLink);
+            let showSecondLinc = getComputedStyle(secondLink);
+            console.log(showFirstLink);
+            console.log(showSecondLinc);
+        }
+
+        giveColorLink();
+        showStyleElements();
+    </script>
+</body>
+</html>

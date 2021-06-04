@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Classwork</title>
+</head>
+<body>
+    <div id="one">one</div>
+
+    <script>
+    
+    let newElement = document.createElement('div');
+
+    function createElement() {
+        newElement.textContent = "two";
+        newElement.id = "two";
+        newElement.style.cssText = "color: green";
+        document.body.append(newElement);
+    }
+
+    newElement.onclick = function addElement() {
+        let secondElement = document.createElement("div");
+        secondElement.textContent = "next";
+        secondElement.id = "two_first";
+        let nameIdentifier = document.getElementById('two').id = 'two_second';
+        secondElement.style.cssText = "color: red;"
+        newElement.prepend(secondElement); 
+    }
+    createElement();
+    </script>
+</body>
+</html>
