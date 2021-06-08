@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type = 'text'] {
+            border: none;
+        }
+        input {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="timer" value="1">
+    <input type="button" onclick="pauseTime()" value="pause">
+    <input type="reset" onclick="resetTime()" value="reset">
+    <input type="button" onclick="startTime()" value="start">
+
+    <script>
+        let seconds = document.getElementById('timer');
+        let start;
+        function timeCounter() {
+            seconds.value =  parseInt(seconds.value) + 1 ;
+                if(seconds.value >= 30) {
+                    let stop = clearInterval(start)
+                }
+        }
+        function startTime() {
+            start = setInterval(timeCounter, 1000);
+        }
+
+        function resetTime() {
+            let resetTime = document.getElementById('timer').value = 1;
+        }
+
+        function pauseTime() {
+           clearInterval(start);
+        }
+    </script>
+</body>
+</html>
