@@ -1,6 +1,4 @@
-
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html >
 <head>
     <meta charset="UTF-8">
@@ -9,29 +7,29 @@
 <body>
     <div id = 'list'></div>
        
-    <script>
-        const user = prompt('Enter your information','');
-        let arr = user.split(' ');
-        let list = document.getElementById('list');
-        let blockList = document.createElement('ul');
-        list.appendChild(blockList);
+<script>
+    const user = prompt('Enter your information','');
+    let arr = user.split(' ');
+    let list = document.getElementById('list');
+    let blockList = document.createElement('ul');
+    list.appendChild(blockList);
 
-        function addNewListElement() {
-        for(let i = 0; i < arr.length; i++) {
-            let newElement = document.createElement('li');
-            (i === 0) ? newElement.innerHTML = arr[i].toUpperCase(arr[i]) 
-            : newElement.innerHTML = arr[i].toLowerCase(arr[i])
-            blockList.appendChild(newElement)
-        }
+    function addNewListElement() {
+    for(let i = 0; i < arr.length; i++) {
+        let newElement = document.createElement('li');
+        (i === 0) ? newElement.innerHTML = arr[i].toUpperCase(arr[i]) 
+        : newElement.innerHTML = arr[i].toLowerCase(arr[i])
+        blockList.appendChild(newElement)
+    }
     }
     addNewListElement();
 
     function lookingLetter() {
-            (user.includes('a') || user.includes('A'))
-                ? alert (user.split(new RegExp('a','i')).length - 1) 
-                : alert ('NOT LETTER "a, A"!');
+    (user.includes('a') || user.includes('A'))
+    ? alert (user.split(new RegExp('a','i')).length - 1) 
+    : alert ('NOT LETTER "a, A"!');
     }    
     lookingLetter()
-        </script>
+</script>
 </body>
 </html>
