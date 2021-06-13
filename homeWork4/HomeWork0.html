@@ -1,0 +1,57 @@
+<!-- Напишите регулярные выражения, которые будут выбирать 
+    индекс - 55535 - 5 numbers
+    ip адресс, пример 255.255.255.255
+    цены в долларах - $0.84, $1232.84, $4
+    дата в виде - 30/12/2016 - день, месяц, год
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Document</title>
+ </head>
+ <body>
+	<p id="demo">
+			Lorem ipsum dolor sit, 12346 amet consectetur adipisicing elit. At  598 debitis reiciendis non modi quos, 
+			eveniet sapiente ratione 37643 accusamus voluptate 
+			voluptates consectetur quam cupiditate consequatur 84757 architecto eligendi blanditiis laborum? Ad, quisquam!
+	</p>
+
+ 	<script>
+  function lookingForNumbers() {
+    const numbers = document.getElementById('demo').innerHTML;
+    const regular = numbers.match(/\d{5}/g);
+    console.log('Number ' + regular);
+  }
+  lookingForNumbers()
+
+  function lookingForIP() {
+    const addressIp = "255.255.255.255";
+    const regular = addressIp.match(/^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/g);
+    let result;
+      if(regular) {
+         result = 'valid IP ' + addressIp;
+      } else {
+        result = 'invalid IP ' + addressIp;
+      }
+        return console.log(result);
+     }
+  lookingForIP();
+
+  function lookingPriseInDollar() {
+    const dollar = /^(\$)(?!0.00)\d{1,}(,\d{2})*(\.\d\d)?$/;
+    const prise = "$0.84, $1232.84, $4";
+    return dollar.test('$1232.84');
+  }
+  console.log('dollar ' + lookingPriseInDollar());
+
+  function lookingData() {
+		let result;
+		const newData = /\d{1,2}[.\/-]\d{1,2}[.\/-]\d{4}/;
+		const day = '04.06.1998';
+		return result = newData.test(day);
+	}
+	console.log('date' + lookingData());
+</script>
+ </body>
+ </html>
