@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ключевое слово this</title>
+    <style>
+        div {
+            background-color:green;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+         window.onload = function(){
+            var divList = document.getElementsByTagName('div');
+            var collorsArray = ['#FF4040','#240935','#490005','#FFF44F','#FFBD88','#00FFFF','#CD00CD','#66FF00','#F13A13','#00836E'];
+
+            for(var i = 0;i<divList.length;i++){
+                divList[i].onmouseover = function(){
+                    var randCollorIndex  = Math.floor( Math.random()*collorsArray.length );
+                    var previousColor = this.style.backgroundColor;
+                    this.style.backgroundColor = collorsArray[randCollorIndex];
+                    this.innerHTML = collorsArray[randCollorIndex];
+
+                    if(previousColor !== ""){
+                        collorsArray.splice(randCollorIndex, 1, previousColor);
+                    } else {
+                        collorsArray.splice(randCollorIndex, 1);
+                    }
+
+                };
+            };
+        };
+        window.onbeforeunload = function() { // событие на закрытие вкладки
+            return "Данные не сохранены. Точно перейти? Не смейте!";
+        };
+
+
+
+
+
+
+
+
+
+        // var divArr = document.getElementsByTagName("div");
+    //    function getRundom() {
+    //        return Math.floor(Math.random() * (max - min) + min);
+    //    }
+
+    //    divArr.onclick = function() {
+    //     divArr.style.backgroundColor = 'rgb('+getRundom(0,255)+', '+getRundom(0,255)+', '+getRundom(0,255)+')';
+//     function getRandomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+
+// divArr.onclick = function() {
+//     divArr.style.backgroundColor = 'rgb('+getRandomInt(0,255)+', '+getRandomInt(0,255)+', '+getRandomInt(0,255)+')';
+//   };
+    
+
+    </script>
+
+</body>
+</html>
