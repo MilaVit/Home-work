@@ -1,0 +1,47 @@
+<!--
+Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт.
+При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны пропасть.
+Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+			<meta name="viewport" content="width=device-width,user-scalable=no">
+	</head>
+	<style>
+			#text {
+					display: none;
+			}
+	</style>
+  <body>
+	<div id="text">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor culpa nam minus 
+			voluptatum deleniti dignissimos qui provident dolorum 
+			voluptates officia similique veniam iure eos voluptas, atque voluptatibus sed iste neque!
+	</div>
+	<a href="#" id="showText">показать/скрыть текст</a>
+	<input type="button" id = 'deleted' value="отменить клик по ссылке">
+	<script>
+		const showText = document.getElementById('showText');
+		const deleted = document.getElementById('deleted');
+
+		showText.addEventListener('click', findText);
+		deleted.addEventListener('click', removeHandler);
+
+		function findText() {
+			if(document.getElementById('text')) {
+				let element = document.getElementById('text');
+			if(element.style.display != 'block') {
+				element.style.display = 'block';
+			}else {
+				element.style.display = 'none';
+			}
+			}
+		}
+			
+		function removeHandler () {
+			showText.removeEventListener('click', findText);
+		}
+	</script>
+  </body>
+</html>
