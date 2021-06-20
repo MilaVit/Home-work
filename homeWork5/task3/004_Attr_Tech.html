@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+window.addEventListener('load', function() {
+  const mainDiv = document.getElementById('main-div');
+  let newElem;
+  mainDiv.addEventListener('mouseover', function(e){
+  let target = e && e.target || window.event.srcElement;
+  const titleAtrribute = target.getAttribute('data-tooltip');   
+    if(!titleAtrribute) {
+      return
+    } else {
+    newElem = document.createElement('div');
+    newElem.className = 'tooltip';
+    newElem.innerHTML = titleAtrribute;
+    document.body.append(newElem);
+  } 
+  });
+  });
+</script>
+</head>
+<body>
+  <div id="main-div">
+    <span data-tooltip="наведите" data-placement = "bottom">наведите</span>
+    <span data-tooltip="для" data-placement = "bottom">для</span>
+    <span data-tooltip="подсказки" data-placement= "bottom">подсказки</span>
+</div>
+</body>
+</html>
