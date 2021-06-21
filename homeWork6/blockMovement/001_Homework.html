@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+	<title>HomeWork</title>
+</head>
+<style>
+	#container {
+		background-color: rgb(81, 182, 223);
+		position: absolute;
+		width: 60px;
+		height: 60px;
+	}
+	#button {
+		position: relative;
+		top: 150px;
+		border: 1px solid black;
+		background-color: rgb(103, 226, 185);
+		color: rgb(59, 59, 59);
+		padding: 5px;
+		border-radius: 4px;
+	}
+</style>
+<body>
+	<div id="container"></div>
+	<input type="button" id='button' value="stop block">
+
+	<script>
+		const container = document.getElementById('container');
+		const btn = document.getElementById('button');
+		container.addEventListener('click', gettingCoordinates);
+		
+		function gettingCoordinates() {
+		let coordX = 0;
+		let windowScreen = screen.width;
+		let timer = setInterval(startMovies, 3);
+		btn.addEventListener('click', stopMovies);
+		
+		function startMovies() {
+			if(coordX === windowScreen) {
+				coordX = '';
+				container.style.right = coordX + 'px';
+			} else {
+				coordX++;
+				container.style.left = coordX + 'px';
+				}
+			}
+
+		function stopMovies() {
+		    clearInterval(timer);
+		}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#container {
+			background-color: rgb(202, 189, 65);
+			border-radius: 10px;
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="container">
+	</div>
+
+	<script>
+		const container = document.getElementById('container');
+		container.addEventListener('mousedown', blockMovement);
+		function blockMovement(e) {
+			const coords = getCoords(container);
+			let shiftX = e.pageX - coords.left;
+			let shiftY = e.pageY - coords.top;
+
+			container.style.position = 'absolute';
+			movesAroundTheScreen(e);
+
+			function movesAroundTheScreen(e) {
+				container.style.left = e.pageX - shiftX + 'px';
+				container.style.top = e.pageY - shiftY + 'px';
+			}
+		document.onmousemove =function(e) {
+			movesAroundTheScreen(e);
+		};
+
+		container.onmouseup = function() {
+		document.onmousemove = null;
+		container.onmouseup = null;
+  };
+};
+		function getCoords(elem) { 
+		let box = elem.getBoundingClientRect();
+		return {
+			top: box.top + pageYOffset,
+			left: box.left + pageXOffset
+		};
+}
+	</script>
+</body>
+</html>
+
