@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Man {
+            constructor (walking, eating, drinking) {
+                this.walk = walking;
+                this.eat = eating;
+                this.drink = drinking;
+            }
+            transferOpportunities () {
+                return `${this.walk} ${this.eat} ${this.drink}`;
+            }
+        }
+
+        class Doctor extends Man{
+            constructor(walking, eating, drinking, curing) {
+                super(walking,eating,drinking)
+                this.cure = curing;
+            }
+            show() {
+                return `${this.walk} ${this.eat} ${this.drink}, he can ${this.cure}`;
+            }
+        }
+
+        class Soldier extends Man{
+            constructor(walking, eating, drinking, shooting) {
+                super(walking,eating,drinking)
+               this.shoot = shooting;
+            }
+            next() {
+                return `${this.walk} ${this.eat} ${this.drink}, he can ${this.shoot}`;
+            }
+        }
+
+        let firstMan = new Man('park', 'pizza', 'soda');
+        let secondMan = new Doctor('hospital','vegetables','water','spoot');
+        let treeMan = new Soldier('forest','meat','beer','shoot');
+      
+        console.log('MAN - ' + firstMan.transferOpportunities());
+        console.log('DOCTOR - ' + secondMan.show());
+        console.log('SOLDIER - ' + treeMan.next());
+    </script>
+</body>
+</html>

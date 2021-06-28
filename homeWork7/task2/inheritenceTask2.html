@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+
+    <script>
+         function Cure () {
+            this.showInfo = function () {
+                console.log(`${this.name} ${this.surname} main doctor`);
+            }
+        }
+
+        function Doctor (name, surname) {
+            this.name = name;
+            this.surname = surname;
+            
+        }
+
+        class Dentist extends Doctor { 
+            constructor (name,surname, treat) {
+             super(name, surname);
+             this.treat = treat;   
+            }
+            showInfo () {
+                return console.log(`This doctor  ${this.name} ${this.surname} treat ${this.treat}`)
+            }
+        }
+
+        class Surgeon extends Doctor {
+            constructor(name, surname, treat) {
+                super(name, surname);
+                this.treat = treat;
+            }
+            showInfo () {
+                return console.log(`This doctor  ${this.name} ${this.surname} treat ${this.treat}`)
+            }
+        }
+
+        Doctor.prototype = new Cure();
+        const DOCTOR = new Doctor('Lanovska','Lilia');
+        const DENTIST = new Dentist('Nikolenko', 'Irina', 'teeth');
+        const SURGEON = new Surgeon('Hovorun','Oleh','perform operation');
+
+        DOCTOR.showInfo();
+        DENTIST.showInfo();
+        SURGEON.showInfo();
+        console.log(DOCTOR);
+        console.log(DENTIST);
+        console.log(SURGEON);
+    </script>
+</body>
+</html>
