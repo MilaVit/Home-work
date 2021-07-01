@@ -1,0 +1,17 @@
+div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+#button {
+    background: linear-gradient(to bottom right, rgb(197, 31, 9),rgb(255, 255, 7));
+    color: rgb(17, 14, 14);
+    font-size: 19px;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+}
